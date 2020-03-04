@@ -1,5 +1,5 @@
 import {
-  SET_EPISODE,
+  EPISODE_FETCH_SUCCEEDED,
   SHOW_FETCH_SUCCEEDED,
 } from '../constants/actionTypes';
 
@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         show: { ...action.payload }
       }
-    case SET_EPISODE:
+    case EPISODE_FETCH_SUCCEEDED:
       return {
         ...state,
         episode: { ...action.payload }

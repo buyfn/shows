@@ -5,7 +5,7 @@ import EpisodeList from '../EpisodeList';
 class ShowPage extends React.Component {
   componentDidMount() {
     const showID = this.props.match.params.showID;
-    this.props.fetchShows(showID);
+    this.props.fetchShow(showID);
   }
 
   render() {

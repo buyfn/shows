@@ -1,8 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-import { setEpisode } from '../../actions';
 
 const EpisodeList = ({ episodes }) => {
   if (episodes) {
@@ -13,7 +10,7 @@ const EpisodeList = ({ episodes }) => {
           {episodes.map(( episodeData ) => {
             return (
               <li key={episodeData.id}>
-                <EpisodeContainer {...episodeData} />
+                <Episode {...episodeData} />
               </li>
             )})}
         </ul>
@@ -24,16 +21,11 @@ const EpisodeList = ({ episodes }) => {
   return null;
 };
 
-const mapDispatchToProps = dispatch => ({
-  setEpisode: (episodeData) => dispatch(setEpisode(episodeData)),
-});
-
 const Episode = ({
   id,
   name,
   image,
   summary,
-  setEpisode,
 }) => {
   return (
     <div>
@@ -41,10 +33,7 @@ const Episode = ({
         <img alt="" src={image.medium} />
       )}
 
-      <Link
-        onClick={() => setEpisode({ id, name, image, summary }) }
-        to={`/episode/${id}`}
-      >
+      <Link to={`/episode/${id}`}>
         <h3>{name}</h3>
       </Link>
       
@@ -52,10 +41,5 @@ const Episode = ({
     </div>
   );
 };
-
-const EpisodeContainer = connect(
-  null,
-  mapDispatchToProps,
-)(Episode);
 
 export default EpisodeList;
