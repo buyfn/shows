@@ -1,4 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import { setEpisode } from '../../actions';
 
 const EpisodeList = ({ episodes }) => {
   if (episodes) {
@@ -6,10 +10,10 @@ const EpisodeList = ({ episodes }) => {
       <>
         <h2>Episodes</h2>
         <ul>
-          {episodes.map(({ id, ...episodeData }) => {
+          {episodes.map(( episodeData ) => {
             return (
-              <li key={id}>
-                <Episode {...episodeData} />
+              <li key={episodeData.id}>
+                <EpisodeContainer {...episodeData} />
               </li>
             )})}
         </ul>
@@ -20,10 +24,16 @@ const EpisodeList = ({ episodes }) => {
   return null;
 };
 
+const mapDispatchToProps = dispatch => ({
+  setEpisode: (episodeData) => dispatch(setEpisode(episodeData)),
+});
+
 const Episode = ({
+  id,
   name,
   image,
   summary,
+  setEpisode,
 }) => {
   return (
     <div>
@@ -31,11 +41,21 @@ const Episode = ({
         <img alt="" src={image.medium} />
       )}
 
-      <h3>{name}</h3>
+      <Link
+        onClick={() => setEpisode({ id, name, image, summary }) }
+        to={`/episode/${id}`}
+      >
+        <h3>{name}</h3>
+      </Link>
       
       <div dangerouslySetInnerHTML={{ __html: summary }} />
     </div>
   );
 };
+
+const EpisodeContainer = connect(
+  null,
+  mapDispatchToProps,
+)(Episode);
 
 export default EpisodeList;

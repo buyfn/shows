@@ -1,4 +1,5 @@
 import {
+  SET_EPISODE,
   SHOW_FETCH_REQUESTED,
   SHOW_FETCH_SUCCEEDED,
   SHOW_FETCH_FAILED,
@@ -17,4 +18,9 @@ export const fetchShowSuccess = data => ({
 export const fetchShowFailure = errorMsg => ({
   type: SHOW_FETCH_FAILED,
   payload: { errorMsg },
+});
+
+export const setEpisode = (episodeData) => ({
+  type: SET_EPISODE,
+  payload: { ...episodeData },
 });
