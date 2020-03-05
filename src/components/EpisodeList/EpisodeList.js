@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import Episode from '../EpisodeItem';
 
 import './EpisodeList.scss';
 
@@ -21,27 +22,6 @@ const EpisodeList = ({ episodes }) => {
   }
 
   return null;
-};
-
-const Episode = ({
-  id,
-  name,
-  image,
-  summary,
-}) => {
-  return (
-    <div>
-      {image && (
-        <img alt="" src={image.medium} />
-      )}
-
-      <Link to={`/episode/${id}`}>
-        <h3>{name}</h3>
-      </Link>
-      
-      <div dangerouslySetInnerHTML={{ __html: summary }} />
-    </div>
-  );
 };
 
 export default EpisodeList;

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './EpisodePage.scss';
+
 class EpisodePage extends React.Component {
   componentDidMount() {
     const episodeID = this.props.match.params.episodeID;
@@ -18,15 +20,25 @@ class EpisodePage extends React.Component {
     }
 
     return (
-      <>
+      <main className="episode-page">
         {image && (
-          <img alt={`"${name}" episode cover`} src={image.original} />
+          <div className="episode-cover">
+            <img
+              className="episode-image"
+              alt={`"${name}" episode cover`}
+              src={image.original}
+            />
+          </div>
         )}
 
-        <h1>{name}</h1>
-
-        <div dangerouslySetInnerHTML={{ __html: summary }} />
-      </>
+        <div className="episode-info">
+          <h1 className="episode-title">{name}</h1>
+          <div
+            className="episode-description"
+            dangerouslySetInnerHTML={{ __html: summary }}
+          />
+        </div>
+      </main>
     );
   }
 }
