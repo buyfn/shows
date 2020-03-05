@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowPage renders correctlly 1`] = `
+<main
+  className="show"
+>
+  <div
+    className="show__info"
+  >
+    <div
+      className="show__cover"
+    >
+      <img
+        alt="\\"test show name\\" show cover"
+        className="show__image"
+        src="img.jpg"
+      />
+    </div>
+    <div
+      className="show__description"
+    >
+      <h1
+        className="show__title"
+      >
+        test show name
+      </h1>
+      <div
+        className="show__summary"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "test show summary",
+          }
+        }
+      />
+    </div>
+  </div>
+</main>
+`;

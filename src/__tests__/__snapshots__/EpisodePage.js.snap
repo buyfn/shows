@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EpisodePage renders correctlly 1`] = `
+Array [
+  <img
+    alt="\\"test episode name\\" episode cover"
+    src="img.jpg"
+  />,
+  <h1>
+    test episode name
+  </h1>,
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "test episode summary",
+      }
+    }
+  />,
+]
+`;

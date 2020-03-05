@@ -1,0 +1,13 @@
+.episode-list-container {
+    text-align: center;
+}
+
+.episode-list {
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 1rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

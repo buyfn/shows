@@ -26,8 +26,7 @@ function* fetchEpisode(action) {
       summary,
     }));
   } catch (error) {
-    console.log(error);
-    yield(put(fetchEpisodeFailure('failure')));
+    yield(put(fetchEpisodeFailure(error.message)));
   }
 }
 

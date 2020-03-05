@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './EpisodeList.scss';
+
 const EpisodeList = ({ episodes }) => {
   if (episodes) {
     return (
-      <>
+      <div className="episode-list-container">
         <h2>Episodes</h2>
-        <ul>
+        <ul className="episode-list">
           {episodes.map(( episodeData ) => {
             return (
-              <li key={episodeData.id}>
+              <li key={episodeData.id} className="episode-item-container">
                 <Episode {...episodeData} />
               </li>
             )})}
         </ul>
-      </>
+      </div>
     );
   }
 

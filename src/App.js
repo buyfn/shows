@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from 'react-router-dom';
 
 import './App.scss';
@@ -10,11 +11,18 @@ import './App.scss';
 import ShowPage from './components/ShowPage';
 import EpisodePage from './components/EpisodePage';
 
+const DEFAULT_PATH = '/show/6771';
+
 function App() {
   return (
     <Router>
       <div className="App">
         <Switch>
+          {/* Redirect to powerpuff girls page from root path */}
+          <Route exact path="/">
+            <Redirect to={DEFAULT_PATH} />
+          </Route>
+
           <Route exact path="/show/:showID"
             children={(props) => <ShowPage {...props} />}
           />
@@ -23,18 +31,10 @@ function App() {
             children={(props) => <EpisodePage {...props} />}
           />
 
-          <Route path="*">
-            <NotFound />
-          </Route>
+          <Route path="*">Not found</Route>
         </Switch>
       </div>
     </Router>
-  );
-}
-
-function NotFound() {
-  return (
-    <h1>Not found</h1>
   );
 }
 

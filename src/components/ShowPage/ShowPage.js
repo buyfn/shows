@@ -2,6 +2,8 @@ import React from 'react';
 
 import EpisodeList from '../EpisodeList';
 
+import './ShowPage.scss';
+
 class ShowPage extends React.Component {
   componentDidMount() {
     const showID = this.props.match.params.showID;
@@ -27,14 +29,23 @@ class ShowPage extends React.Component {
     }
 
     return (
-      <main>
-        {image && (
-          <img alt="" src={this.props.image.medium} />
-        )}
+      <main className="show">
+        <div className="show__info">
+          {image && (
+            <div className="show__cover">
+              <img
+                className="show__image"
+                alt={`"${name}" show cover`}
+                src={image.original}
+              />
+            </div>
+          )}
 
-        <h1>{name}</h1>
-
-        <div dangerouslySetInnerHTML={{ __html: summary }} />
+          <div className="show__description">
+            <h1 className="show__title">{name}</h1>
+            <div className="show__summary" dangerouslySetInnerHTML={{ __html: summary }} />
+          </div>
+        </div>
 
         <EpisodeList episodes={episodes} />
       </main>

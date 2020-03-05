@@ -20,7 +20,7 @@ class EpisodePage extends React.Component {
     return (
       <>
         {image && (
-          <img alt="" src={image.original} />
+          <img alt={`"${name}" episode cover`} src={image.original} />
         )}
 
         <h1>{name}</h1>
