@@ -1,20 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EpisodePage renders correctlly 1`] = `
-Array [
-  <img
-    alt="\\"test episode name\\" episode cover"
-    src="img.jpg"
-  />,
-  <h1>
-    test episode name
-  </h1>,
+<main
+  className="episode-page"
+>
   <div
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "test episode summary",
+    className="episode-cover"
+  >
+    <img
+      alt="\\"test episode name\\" episode cover"
+      className="episode-image"
+      src="img.jpg"
+    />
+  </div>
+  <div
+    className="episode-info"
+  >
+    <h1
+      className="episode-title"
+    >
+      test episode name
+    </h1>
+    <div
+      className="episode-description"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test episode summary",
+        }
       }
-    }
-  />,
-]
+    />
+  </div>
+</main>
 `;
