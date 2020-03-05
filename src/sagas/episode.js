@@ -5,25 +5,30 @@ import {
 } from 'redux-saga/effects';
 
 import { EPISODE_FETCH_REQUESTED } from '../constants/actionTypes';
-import { fetchEpisodeSuccess } from '../actions';
+import { fetchEpisodeSuccess, fetchEpisodeFailure } from '../actions';
 import { getEpisodeData } from '../api';
 
 function* fetchEpisode(action) {
   const { episodeID } = action.payload;
 
-  const { data: {
-    id,
-    name,
-    image,
-    summary,
-  } } = yield call(getEpisodeData, episodeID);
+  try {
+    const { data: {
+      id,
+      name,
+      image,
+      summary,
+    } } = yield call(getEpisodeData, episodeID);
 
-  yield put(fetchEpisodeSuccess({
-    id,
-    name,
-    image,
-    summary,
-  }));
+    yield put(fetchEpisodeSuccess({
+      id,
+      name,
+      image,
+      summary,
+    }));
+  } catch (error) {
+    console.log(error);
+    yield(put(fetchEpisodeFailure('failure')));
+  }
 }
 
 export default function* saga() {

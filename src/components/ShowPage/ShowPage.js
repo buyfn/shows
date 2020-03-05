@@ -9,17 +9,34 @@ class ShowPage extends React.Component {
   }
 
   render() {
+    const {
+      image,
+      name,
+      summary,
+      episodes,
+      fetchingState,
+      errorMsg
+    } = this.props;
+
+    if (fetchingState === 'fetching') {
+      return 'Fetching data...';
+    }
+
+    if (fetchingState === 'failed') {
+      return errorMsg;
+    }
+
     return (
       <main>
-        {this.props.image && (
+        {image && (
           <img alt="" src={this.props.image.medium} />
         )}
 
-        <h1>{this.props.name}</h1>
+        <h1>{name}</h1>
 
-        <div dangerouslySetInnerHTML={{ __html: this.props.summary }} />
+        <div dangerouslySetInnerHTML={{ __html: summary }} />
 
-        <EpisodeList episodes={this.props.episodes} />
+        <EpisodeList episodes={episodes} />
       </main>
     );
   }

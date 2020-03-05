@@ -6,6 +6,8 @@ import EpisodePage from './EpisodePage';
 
 const mapStateToProps = (state) => ({
   ...state.episode,
+  fetchingState: state.fetchingState,
+  errorMsg: state.errorMsg
 });
 
 const mapDispatchToProps = dispatch => ({

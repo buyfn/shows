@@ -6,6 +6,8 @@ import ShowPage from './ShowPage';
 
 const mapStateToProps = (state) => ({
   ...state.show,
+  fetchingState: state.fetchingState,
+  errorMsg: state.errorMsg,
 });
 
 const mapDispatchToProps = dispatch => ({

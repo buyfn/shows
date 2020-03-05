@@ -7,7 +7,15 @@ class EpisodePage extends React.Component {
   }
 
   render() {
-    const { image, name, summary } = this.props;
+    const { image, name, summary, fetchingState, errorMsg } = this.props;
+
+    if (fetchingState === 'fetching') {
+      return 'Fetching data...';
+    }
+
+    if (fetchingState === 'failed') {
+      return errorMsg;
+    }
 
     return (
       <>
@@ -16,7 +24,7 @@ class EpisodePage extends React.Component {
         )}
 
         <h1>{name}</h1>
-        
+
         <div dangerouslySetInnerHTML={{ __html: summary }} />
       </>
     );
