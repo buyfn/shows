@@ -2,7 +2,7 @@
 
 exports[`ShowPage renders correctlly 1`] = `
 <main
-  className="show"
+  className="show-page"
 >
   <div
     className="show__info"
