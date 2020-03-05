@@ -1,4 +1,5 @@
 import React from 'react';
+import { random } from 'lodash';
 
 import EpisodeList from '../EpisodeList';
 
@@ -7,7 +8,7 @@ import './ShowPage.scss';
 class ShowPage extends React.Component {
   componentDidMount() {
     const showID = this.props.match.params.showID;
-    this.props.fetchShow(showID);
+    this.props.fetchShow(showID === 'random' ? random(0, 46559) : showID);
   }
 
   render() {
@@ -29,7 +30,7 @@ class ShowPage extends React.Component {
     }
 
     return (
-      <main className="show">
+      <main className="show-page">
         <div className="show__info">
           {image && (
             <div className="show__cover">

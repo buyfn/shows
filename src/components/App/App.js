@@ -8,8 +8,8 @@ import {
 
 import './App.scss';
 
-import ShowPage from './components/ShowPage';
-import EpisodePage from './components/EpisodePage';
+import ShowPage from '../ShowPage';
+import EpisodePage from '../EpisodePage';
 
 const DEFAULT_PATH = '/show/6771';
 

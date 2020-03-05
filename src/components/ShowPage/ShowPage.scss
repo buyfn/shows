@@ -1,3 +1,7 @@
+.show-page {
+    margin-bottom: 6em;
+}
+
 .show__info {
     display: flex;
     flex-direction: column;
@@ -27,7 +31,7 @@
 .show__description {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 2em;
 
     @media (min-width: 768px) {
         width: 50%;

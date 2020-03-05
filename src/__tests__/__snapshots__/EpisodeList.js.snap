@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EpisodeList renders correctlly 1`] = `
+Array [
+  <div
+    className="episode-list-container"
+  >
+    <h2>
+      Episodes
+    </h2>
+    <ul
+      className="episode-list"
+    >
+      <li
+        className="episode-item-container"
+      >
+        <div
+          className="episode-item"
+        >
+          <a
+            href="/episode/1"
+            onClick={[Function]}
+          >
+            <div
+              className="episode-cover"
+            >
+              <img
+                alt="\\"test episode name\\" episode cover"
+                className="episode-image"
+                src="test.jpg"
+              />
+            </div>
+            <h3>
+              test episode name
+            </h3>
+          </a>
+        </div>
+      </li>
+      <li
+        className="episode-item-container"
+      >
+        <div
+          className="episode-item"
+        >
+          <a
+            href="/episode/2"
+            onClick={[Function]}
+          >
+            <div
+              className="episode-cover"
+            >
+              <img
+                alt="\\"test episode name 2\\" episode cover"
+                className="episode-image"
+                src="test.jpg"
+              />
+            </div>
+            <h3>
+              test episode name 2
+            </h3>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>,
+  ")",
+]
+`;
