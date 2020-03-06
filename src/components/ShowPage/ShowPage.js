@@ -24,10 +24,6 @@ const ShowPage = ({
     dispatch(fetchShowRequest(id));
   }, [dispatch, showID]);
 
-  if (fetchingState === 'initial') {
-    return 'initial';
-  }
-
   if (fetchingState === 'fetching') {
     return 'Fetching data...';
   }
