@@ -29,16 +29,6 @@ const EpisodePage = ({
 
   return (
     <main className="episode-page">
-      {image && (
-        <div className="episode-cover">
-          <img
-            className="episode-image"
-            alt={`"${name}" episode cover`}
-            src={image.original}
-          />
-        </div>
-      )}
-
       <div className="episode-info">
         <h1 className="episode-title">{name}</h1>
         <div
@@ -46,6 +36,14 @@ const EpisodePage = ({
           dangerouslySetInnerHTML={{ __html: summary }}
         />
       </div>
+
+      {image && (
+        <img
+          className="episode-image"
+          alt={`"${name}" episode cover`}
+          src={image.original}
+        />
+      )}
     </main>
   );
 }

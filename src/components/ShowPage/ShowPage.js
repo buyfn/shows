@@ -54,7 +54,7 @@ const ShowPage = ({
         </div>
       </div>
 
-      <EpisodeList episodes={episodes} />
+      {episodes && <EpisodeList episodes={episodes} />}
     </main>
   );
 }

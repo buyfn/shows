@@ -1,16 +1,12 @@
 .episode-page {
     max-width: 1400px;
-}
-
-.episode-cover {
-    width: 100%;
+    margin: 0 2em;
 }
 
 .episode-image {
-    width: 100%;
-    object-fit: cover;
+    max-width: 100%;
 }
 
 .episode-info {
-    padding: 0 2em 4em;
+    max-width: 800px;
 }
