@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import ShowPage from '../components/ShowPage/ShowPage';
+import ShowPage from '../../components/ShowPage/ShowPage';
 
 describe('ShowPage', () => {
   const props = {

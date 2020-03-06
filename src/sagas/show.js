@@ -2,7 +2,7 @@ import {
   all,
   call,
   put,
-  takeLatest
+  takeLatest,
 } from 'redux-saga/effects';
 
 import { SHOW_FETCH_REQUESTED } from '../constants/actionTypes';

@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-import EpisodeList from '../components/EpisodeList';
+import EpisodeList from '../../components/EpisodeList';
 
 describe('EpisodeList', () => {
   const episodes = [

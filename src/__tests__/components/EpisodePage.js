@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import EpisodePage from '../components/EpisodePage/EpisodePage';
+import EpisodePage from '../../components/EpisodePage/EpisodePage';
 
 describe('EpisodePage', () => {
   const props = {
