@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import sanitizeHtml from 'sanitize-html';
 
 import { fetchEpisodeRequest } from '../../actions';
 
@@ -33,7 +34,7 @@ const EpisodePage = ({
         <h1 className="episode-title">{name}</h1>
         <div
           className="episode-description"
-          dangerouslySetInnerHTML={{ __html: summary }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHtml(summary) }}
         />
       </div>
 

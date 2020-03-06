@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { random } from 'lodash';
+import sanitizeHtml from 'sanitize-html';
 
 import EpisodeList from '../EpisodeList';
 import { fetchShowRequest } from '../../actions';
@@ -50,7 +51,10 @@ const ShowPage = ({
 
         <div className="show__description">
           <h1 className="show__title">{name}</h1>
-          <div className="show__summary" dangerouslySetInnerHTML={{ __html: summary }} />
+          <div
+            className="show__summary"
+            dangerouslySetInnerHTML={{ __html: sanitizeHtml(summary) }}
+          />
         </div>
       </div>
 
