@@ -1,5 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
+
+import store from '../../store';
 
 import EpisodePage from '../../components/EpisodePage/EpisodePage';
 
@@ -16,21 +19,12 @@ describe('EpisodePage', () => {
     },
   };
 
-  let tree;
-  const fetchEpisodeMock = jest.fn();
-
-  beforeAll(() => {
-    tree = renderer
-      .create(<EpisodePage {...props} fetchEpisode={fetchEpisodeMock} />)
-      .toJSON();
-  });
-
-  it('calls "fetchShow" with correct argument', () => {
-    expect(fetchEpisodeMock).toHaveBeenCalledWith('1');
-    expect(fetchEpisodeMock.mock.calls.length).toEqual(1);
-  });
-
   it('renders correctlly', () => {
+    const tree = renderer
+      .create(
+        <Provider store={store}><EpisodePage {...props}/></Provider>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

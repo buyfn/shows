@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import { fetchShowRequest } from '../../actions';
 
 import ShowPage from './ShowPage';

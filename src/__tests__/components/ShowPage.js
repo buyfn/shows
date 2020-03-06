@@ -1,5 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
+
+import store from '../../store';
 
 import ShowPage from '../../components/ShowPage/ShowPage';
 
@@ -16,21 +19,12 @@ describe('ShowPage', () => {
     },
   };
 
-  let tree;
-  const fetchShowMock = jest.fn();
-
-  beforeAll(() => {
-    tree = renderer
-      .create(<ShowPage {...props} fetchShow={fetchShowMock} />)
-      .toJSON();
-  });
-
-  it('calls "fetchShow" with correct argument', () => {
-    expect(fetchShowMock).toHaveBeenCalledWith('1');
-    expect(fetchShowMock.mock.calls.length).toEqual(1);
-  });
-
   it('renders correctlly', () => {
+    const tree = renderer
+      .create(
+        <Provider store={store}><ShowPage {...props}/></Provider>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
