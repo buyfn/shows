@@ -47,14 +47,17 @@ const ShowPage = ({
 
         <div className="show__description">
           <h1 className="show__title">{name}</h1>
-          <div
+          {summary && (<div
             className="show__summary"
             dangerouslySetInnerHTML={{ __html: sanitizeHtml(summary) }}
-          />
+          />)}
         </div>
       </div>
 
-      {episodes && <EpisodeList episodes={episodes} />}
+      {episodes
+        && episodes.length > 0
+        && <EpisodeList episodes={episodes} />
+      }
     </main>
   );
 }
